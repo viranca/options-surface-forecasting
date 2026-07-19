@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\title{Short-Horizon Forecasting of the SPY Implied-Volatility Surface\\
+  \large A pre-registered study on Databento OPRA data}
+\author{Viranca}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% One paragraph: the question, the data, the headline result (including what
+% did NOT work), and why the methodology (pre-registration, execution-aware
+% metrics) makes the result trustworthy.
+TODO.
+\end{abstract}
+
+\section{Question and setup}
+% What is being predicted (surface state deltas at 15m/60m horizons, short-DTE
+% wings), why short-horizon surface dynamics matter, and what "good" means
+% here (beating persistence after spreads, not raw RMSE).
+
+\section{Data and surface construction}
+% Databento OPRA CMBP-1 for SPY, one month; surface-state builder;
+% arbitrage/quality gates; reference-IV cross-checks.
+
+\section{Methodology and pre-registration}
+% Baselines (persistence), models (ridge, LightGBM), walk-forward splits,
+% expectations registered before each run, and the evaluation metrics.
+
+\section{Results}
+% Headline table: model vs. persistence by horizon. Feature-set ablations
+% (Greeks, microstructure). Report negative results as registered.
+
+\section{What changed between rounds --- and why}
+% The replication story: which June findings held on three months, which
+% flipped sign, and the diagnosis.
+
+\section{Limitations and next steps}
+% Single underlier, one regime, execution model is a thin spread-aware
+% wrapper; what a production version would add.
+
+\end{document}

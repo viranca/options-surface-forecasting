@@ -1,0 +1,21 @@
+# LaTeX build artifacts (memo.pdf itself IS committed)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Python / notebooks
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+
+# Local env / secrets — never commit
+.env
