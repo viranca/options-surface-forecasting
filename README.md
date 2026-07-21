@@ -9,7 +9,7 @@ pre-registered before the corresponding run, and an execution-aware verdict.
 | Path | Contents |
 |------|----------|
 | [`memo/`](memo/) | Research memo (LaTeX source + PDF): the headline write-up covering the question, pre-registered expectations, results, what changed between rounds, and the execution-replay verdict. |
-| [`notebooks/`](notebooks/) | Analysis notebooks, committed **with rendered outputs**. The underlying OPRA data is licensed and not redistributed, so the notebooks ship executed rather than re-runnable; further notebooks (data ingestion → models) are being ported. |
+| [`notebooks/`](notebooks/) | Six analysis notebooks covering the full arc (data ingestion, surface construction, labels and leakage tests, baselines, the PyTorch sequence model, and the execution-aware replay), committed **with rendered outputs**. The underlying OPRA data is licensed and not redistributed, so the notebooks ship executed rather than re-runnable. |
 
 ## The short version
 
