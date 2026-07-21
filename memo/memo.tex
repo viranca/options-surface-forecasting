@@ -53,7 +53,7 @@ design, endpoints, and verdict taxonomy were locked before any replay
 computation and which ran exactly once: at the primary 15-minute horizon
 the forecast does \emph{not} clear the touch (mean entry-cost markout
 $-\$0.0030$ per share, 95\% day-bootstrap CI $[-0.0040, -0.0021]$), even
-though it genuinely selects favorable repricing: a registered
+though it genuinely selects favorable repricing; a registered
 attribution decomposition shows the model prices cell-median dislocations
 that the tradable contract realizes only fractionally at short horizons.
 An exploratory horizon sweep, reported with its multiple-comparison
@@ -442,7 +442,8 @@ models, all registered arms.
 probes pass. One registered bound breached marginally and is disclosed
 rather than amended: 2.4--2.6\% of predictions per horizon matched no
 tradable contract, against a registered 2\% bound. Every such case is a
-far-wing cell whose node contained no quote-valid OTM-side contract, a cell on which the replay's instrument is not defined, with zero join
+far-wing cell whose node contained no quote-valid OTM-side contract, a
+cell on which the replay's instrument is not defined; there were zero join
 failures. The validity condition holds on both clauses: gated exit
 unfillability is 1.53\% ($<5\%$) and \emph{falls} with predicted edge
 (0.37\% in the top decile), so missing exits do not concentrate where the
@@ -477,8 +478,8 @@ single-contract attenuation
 haircut: the fixed-membership cell median tracks the target at
 corr${}\approx 0.7$ at every horizon. The horizon-dependent loss is
 per-contract: at 5--15 minutes the cell-median $\dIV$ the model forecasts
-is dominated by quote-bounce of the cell's wide members: mean-reverting
-and genuinely \emph{predictable}, but not realizable on the tight tradable
+is dominated by quote-bounce of the cell's wide members; that bounce is
+mean-reverting and genuinely \emph{predictable}, but not realizable on the tight tradable
 contract (regression slope of contract on fixed-median $\dIV$: 0.09 at 5m,
 0.25 at 15m). By 60 minutes the contract realizes roughly $0.7\times$ the
 cell move.
@@ -517,7 +518,8 @@ honesty arms: $+0.0078$ under one-minute delayed entry and $+0.0077$ under
 non-overlapping sampling; on the slippage grid it remains positive through
 $s = \$0.005$, whereas at 15m the same $s$ is immediately fatal
 ($-0.0076$). This is reported as what it is: not a claimed result, but the
-precise, pre-registerable hypothesis the registered run points to: confirm the 60-minute horizon as primary on new data.
+precise, pre-registerable hypothesis the registered run points to, namely
+to confirm the 60-minute horizon as primary on new data.
 \end{sloppypar}
 
 \section{Limitations and next steps}
