@@ -14,9 +14,12 @@ pre-registered before the corresponding run, and an execution-aware verdict.
 
 ## The short version
 
-- **Data**: SPY option quotes (Databento OPRA CMBP-1) over 64 trading
-  sessions (Mar 31 – Jul 1, 2026), built into quality-gated,
-  arbitrage-screened volatility-surface states on a one-minute grid.
+- **Data**: tick-level top-of-book quotes for the full SPY option chain
+  (Databento OPRA CMBP-1, consolidated NBBO) and the SPY underlying
+  (Nasdaq MBP-1), over 64 trading sessions (Mar 31 – Jul 1, 2026); roughly
+  44 billion raw quote records in the June month alone, built into
+  quality-gated, arbitrage-screened volatility-surface states on a
+  one-minute grid.
 - **Task**: forecast per-cell implied-volatility changes at 5–60-minute
   horizons (primary: 15 minutes) against a persistence null, under purged
   walk-forward validation with mechanical leakage probes and shuffled-label
