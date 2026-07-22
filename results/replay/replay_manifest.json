@@ -1,0 +1,326 @@
+{
+ "schema_version": 1,
+ "git_commit": "884ff426f86877eb597c2027392d53ecab37b183",
+ "git_dirty": true,
+ "utc_written": "2026-07-21T11:58:47.982266+00:00",
+ "preds": {
+  "path": "preds_3mo_fiveway_micro_flow.parquet",
+  "bytes": 330421575,
+  "sha256": "550ca70f8b7f7240176dacccd93899892ea3200121e78ac226607d0cb4645c01"
+ },
+ "contracts": {
+  "spy_20260415": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "fb39e19ac458b7e6038ede5dc8ec0c854dc166d1a1bc7cdb2a53cbf4009a8f3c"
+  },
+  "spy_20260416": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "d6e48dccd9c889bf083d6c579ca416ec15f2b4906f67e855b9ea1215e33403db"
+  },
+  "spy_20260417": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "64a870c519724a34a956f7e6422768b0acab67e48dad06ab8d9284a2c593d969"
+  },
+  "spy_20260420": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "eb7fd8689c2a227ad8eff614f37f6468d259e36c8405e6ccc6407acb41cdff22"
+  },
+  "spy_20260421": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "ca26de3ecf6fcbcf8892c3440ab1da63026afb0d0b12de8c70dd39d9e6f635b0"
+  },
+  "spy_20260422": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "d180512993731f69717a503a936c312420da3f25bc5848e8b76013a569be47a1"
+  },
+  "spy_20260423": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "e5a41f61c4fe2c9d3ec76c81809a63e5bf4857062e145844b47922bf37d2e2f2"
+  },
+  "spy_20260424": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "413806f263ff1134dab41bd76f9c93660adcefd3914f34cbfd8cf3326d1afbc3"
+  },
+  "spy_20260427": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "adf9e49695402b0bcb7b921c73e390db2ffd866e65172a4c6106786797442a30"
+  },
+  "spy_20260428": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "4713c60b0bca9e78d2fffb30cd2eb232281bfb2685208432e75833880e83198c"
+  },
+  "spy_20260429": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "cdfb688c3f9726c090e7ddfdf2240e4d4d9574e00ef83c16e3c187afeeb2f195"
+  },
+  "spy_20260430": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "2761faa29f985fcaa919ff57e2116d4eddd2f7a5b4dd2e64717acddc097a0155"
+  },
+  "spy_20260501": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "338cf8734b047fc4dbd98740f1d33250bc684a99f97ecc447cd0865d73a8da18"
+  },
+  "spy_20260504": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "82b0b47876f2a859d559960197213f0167f591aa7c05d530d65fe4ff71595090"
+  },
+  "spy_20260505": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "0eefad236751173b6714160631939a5e34a125a0d7f6e633264169d16fb93bf7"
+  },
+  "spy_20260506": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "8e634c88d185b0385052ef3e901a7ba249715d8ac92622b4ad97ff1b32e71256"
+  },
+  "spy_20260507": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "cc08e0aaa65b2c0dfeda6bccffdc8c79533800fd62d85d94c1057b9c81ce896d"
+  },
+  "spy_20260508": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "82cda4ce64f0a344b39a50fcd936c60fc460ac64e77faec9acfcc335fd52adf0"
+  },
+  "spy_20260511": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "977d4b2deeeba5c3ae8704a9e3737426a1f615a5e5dfd96d1e9673b44432a411"
+  },
+  "spy_20260512": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "b32faa1f5ed758684935e0d758c20f7297dc40651d5f5334e88f2ffa50724911"
+  },
+  "spy_20260513": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "dbc55caaff05b5afb7df1bd4d9f44a9fa05126a9728cbffb9c310522ce550654"
+  },
+  "spy_20260514": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "6ef562e9965af96959b3fe2d818aaf746e147a2f3e2779ef8beac74f2ab67bbd"
+  },
+  "spy_20260515": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "82dc3ed4b777a0b1120a321b1994961dc766168baedf6dd9103124c2655c0fbe"
+  },
+  "spy_20260518": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "0b1d2df84225ffa014cd4831fe6d7803375e6fe46ca5461c878c35c5e57f2f9c"
+  },
+  "spy_20260519": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "5a465854f45e276fa5d0ec2c4d7797c3e583840e574eaa3b328e939de5d22e31"
+  },
+  "spy_20260520": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "efc8c2ea88e42aea0c4e36ce417c2380aa4f71efd8cf7d18f1cddc2b0cda2d90"
+  },
+  "spy_20260521": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "431ea4740e7df529ba650131cdab611feb015cf8ab41be1b44772aa3a2fe8f20"
+  },
+  "spy_20260522": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "ca66c450bc0ca61ac6f90d17a4a2b425d63ae456d3da8f271c3c88fa50f6b68d"
+  },
+  "spy_20260526": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "4aa7ff723b3f766c8f03db863610b748e696391204b02aed8243705d77ec6ae8"
+  },
+  "spy_20260527": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "b0226e666b36e98774d86ffa0ea0d3fe7556f0370894eecca06b03561fac3a20"
+  },
+  "spy_20260528": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "f400b39d3dffa8cb3d0237902662b00eac1fc5a964d90b1486de021f1ab938cb"
+  },
+  "spy_20260529": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "3d92c8f01386e30e735909933f6037ea088c34b7c56d24d70c52642574b5da16"
+  },
+  "spy_20260601": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "5a011d203d860e92031a0e52744c2ba5bc51f3f54960845daee089ab441eb6f6"
+  },
+  "spy_20260602": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "723373223e9f5de8151d5ae1549446c999caaa759c87e9713f7bb836b4c555cf"
+  },
+  "spy_20260603": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "0024897d87f338efe3eac6cf90a93535ed5743bba3a6c2b51254e5926cf510c0"
+  },
+  "spy_20260604": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "5f0d80dd7f49734d7602e0c1096ee7dee0478b22d35344eab32a322fdf788b0c"
+  },
+  "spy_20260605": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "844e3b787d1dfa4118493b1d2ad602217a0a43633c24ebb91bf4aba6e9c1e5e5"
+  },
+  "spy_20260608": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "1639f9a7d416dcfcd72cd2fef97cac9b4a7648375687b9fdba86f84025eb654a"
+  },
+  "spy_20260609": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "a7d40b791a4a19121609c2ebd6476a29cf76fdd757ce1c7796f68d103696539d"
+  },
+  "spy_20260610": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "a1e34130ea66cecc656510646bd9f489ee943c48cc103dd67b9b409759ab3629"
+  },
+  "spy_20260611": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "e78f8dd621d73180a8fc4fac3304848b6da3699c784d932f4adba2ef858bc133"
+  },
+  "spy_20260612": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "3161b0a25dc74e1085879fd3de37a8aac5afb7ac188b5991ee95abbdd37e50cd"
+  },
+  "spy_20260615": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "4217083417549ed603abe93e5e8b8e97c3d2fd3b780b53414061f2fe2443749e"
+  },
+  "spy_20260616": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "839dfdbad1bb1af3b70768d761276504d3bb5ab152b23adc7fc4389ff4e524ea"
+  },
+  "spy_20260617": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "bfff6616380c5d77e5199232b52fc288d252597442e80c7d363cc0e42712ee9f"
+  },
+  "spy_20260618": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "48956d3124416680775253fe4fe53aab6547ba5aef952200181362698acd24c1"
+  },
+  "spy_20260622": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "a5c57dc2310da5ec4985ae3543f1e667d9a59031c1e3941938f378ec847baa7c"
+  },
+  "spy_20260623": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "f6dfbfa6925f2b273cb361442ac7b6600b0f38a15468ff7d5706bb34cb185713"
+  },
+  "spy_20260624": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "9a3d38ad0861da3cfbb87eb9cc3ebdaf97eb1ebe49ff97f505295437141ee914"
+  },
+  "spy_20260625": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "6b1303b3f126bbdd7fc448be7db074e11cc8a98edd3ea40972062cb3fdda7fd5"
+  },
+  "spy_20260626": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "163e7d0246ec538b5122e78a5b632aea07a5455054f89a3bc3ecb9eecce8a975"
+  },
+  "spy_20260629": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "e4aa6c2d18e0fc456b288f3c5f9e76ad721f284216f9371e26f7442b0ecaef07"
+  },
+  "spy_20260630": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "42a86febab935856bb0bd6e0b8899889f6095d20fc8cf9ccd5d6db4eee04d2ac"
+  },
+  "spy_20260701": {
+   "file": "surface_contracts_slim_1m.parquet",
+   "sha256": "2f1c1de963adff8e85477cc51f2f69f40e1dfc09a8e6c6d1f81ef2b14a685f23"
+  }
+ },
+ "symbol_days": [
+  "spy_20260415",
+  "spy_20260416",
+  "spy_20260417",
+  "spy_20260420",
+  "spy_20260421",
+  "spy_20260422",
+  "spy_20260423",
+  "spy_20260424",
+  "spy_20260427",
+  "spy_20260428",
+  "spy_20260429",
+  "spy_20260430",
+  "spy_20260501",
+  "spy_20260504",
+  "spy_20260505",
+  "spy_20260506",
+  "spy_20260507",
+  "spy_20260508",
+  "spy_20260511",
+  "spy_20260512",
+  "spy_20260513",
+  "spy_20260514",
+  "spy_20260515",
+  "spy_20260518",
+  "spy_20260519",
+  "spy_20260520",
+  "spy_20260521",
+  "spy_20260522",
+  "spy_20260526",
+  "spy_20260527",
+  "spy_20260528",
+  "spy_20260529",
+  "spy_20260601",
+  "spy_20260602",
+  "spy_20260603",
+  "spy_20260604",
+  "spy_20260605",
+  "spy_20260608",
+  "spy_20260609",
+  "spy_20260610",
+  "spy_20260611",
+  "spy_20260612",
+  "spy_20260615",
+  "spy_20260616",
+  "spy_20260617",
+  "spy_20260618",
+  "spy_20260622",
+  "spy_20260623",
+  "spy_20260624",
+  "spy_20260625",
+  "spy_20260626",
+  "spy_20260629",
+  "spy_20260630",
+  "spy_20260701"
+ ],
+ "horizons": [
+  5,
+  15,
+  30,
+  60
+ ],
+ "models": [
+  "ridge",
+  "lgbm",
+  "tcn"
+ ],
+ "theta_grid": [
+  1.0,
+  1.5,
+  2.0
+ ],
+ "slippage_grid": [
+  0.0,
+  0.005,
+  0.01
+ ],
+ "lambda_policy": {
+  "primary": "raw (lambda=1)",
+  "wf_min_days": 10,
+  "wf_clip": [
+   0.0,
+   1.5
+  ]
+ },
+ "contract_multiplier": 100.0,
+ "bootstrap": {
+  "n": 10000,
+  "seed": 42
+ },
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "packages": {
+  "pandas": "3.0.3",
+  "numpy": "2.4.6",
+  "pyarrow": "24.0.0"
+ },
+ "synthetic": false
+}

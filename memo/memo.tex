@@ -38,7 +38,7 @@ leakage probes and shuffled-label negative controls. At the primary
 15-minute horizon, ridge regression on a compact set of time-$t$ features
 improves vega-weighted MSE over the persistence null by 16.7\% on the June
 panel (25.9\% unweighted); on the expanded three-month panel its unweighted
-skill is 26.1\%. A GPU sweep of temporal convolutional networks shows a deep
+skill (the architecture sweep's registered summary metric) is 26.1\%. A GPU sweep of temporal convolutional networks shows a deep
 sequence model adds essentially nothing: within the tested configurations,
 receptive fields beyond 15 minutes produced no additional out-of-sample
 skill. Pre-registered feature ablations reveal that a finding as intuitive
@@ -51,8 +51,9 @@ results are reported as registered. The economic question is settled by a
 pre-registered execution-aware replay (Section~\ref{sec:replay}) whose
 design, endpoints, and verdict taxonomy were locked before any replay
 computation and which ran exactly once: at the primary 15-minute horizon
-the forecast does \emph{not} clear the touch (mean entry-cost markout
-$-\$0.0030$ per share, 95\% day-bootstrap CI $[-0.0040, -0.0021]$), even
+the forecast does \emph{not} clear the touch (mean vega-linearized
+entry-cost markout $-\$0.0030$ per share, 95\% day-bootstrap CI
+$[-0.0040, -0.0021]$), even
 though it genuinely selects favorable repricing; a registered
 attribution decomposition shows the model prices cell-median dislocations
 that the tradable contract realizes only fractionally at short horizons.
@@ -105,7 +106,7 @@ the underlying. Three nested samples appear in this memo:
 Stage & Dates (2026) & Sessions & Purpose \\
 \midrule
 Initial panel & Jun 2 -- Jul 1 & 21 & Baselines and first ablations \\
-Expanded panel & Mar 31 -- Jul 1 & 64 & Architecture sweep; pre-registered replications \\
+Expanded panel & Mar 31 -- Jul 1 & 64 & Architecture sweep; pre-registered re-tests \\
 Replay prediction dump & Apr 15 -- Jul 1 & 54 test days & Execution-aware replay (Sec.~\ref{sec:replay}) \\
 \bottomrule
 \end{tabular}
@@ -126,7 +127,9 @@ slices trusted on the reference validation day; the rest fall back to direct
 interpolation), recovers forwards from put--call parity (100\% coverage),
 and writes IV, Black-76 \cite{black1976} Greeks, and quality flags onto a
 fixed grid of 9 DTE buckets $\times$ 14 log-moneyness nodes: 126 cells
-per minute. The June panel used for forecasting is 886{,}467 cell-minutes.
+per minute. The grid coordinate is spot-based log-moneyness,
+$k = \log(K/\text{spot})$; the parity-recovered forwards enter Black-76
+pricing and Greeks, not the grid axis. The June panel used for forecasting is 886{,}467 cell-minutes.
 
 Every session must pass an automated validation gate before it enters the
 panel. Among contract-minutes passing the quote-eligibility filters (finite
@@ -162,7 +165,9 @@ $1 - \mathrm{MSE}_{\text{model}} / \mathrm{MSE}_{\text{persistence}}$
 computed under the same weights. Weighting always enters
 \emph{evaluation}; it enters \emph{training} only where stated: LightGBM
 via per-row sample weights and the TCN via its vega-weighted loss; ridge is
-trained unweighted.
+trained unweighted. Where the architecture sweep of
+Section~\ref{sec:results} quotes unweighted skill, that was the sweep's
+registered summary metric.
 
 \paragraph{Cross-sectional rank IC.} At each minute with at least 20
 in-scope cells, the Spearman rank correlation between predicted and realized
@@ -186,7 +191,12 @@ features at or before $t$ unchanged). The probes were validated by injecting
 a deliberate future-IV feature, which they caught. In addition,
 shuffled-label negative controls were run for every model class: within each
 walk-forward fold, \emph{training} labels are permuted after the
-purge/embargo (test labels intact) and the models retrained. Because the
+purge/embargo (test labels intact) and the models retrained. The two layers
+test different things: the probes test temporal causality of the features
+directly, while the shuffle is a model-harness control (residual skill under
+shuffling would expose a broken purge, test information reaching training,
+or a metric bug; a leaked feature would itself decouple from permuted
+training labels). Because the
 target has non-zero mean over long windows, shuffled models are judged
 against the constant train-mean baseline rather than the zero null; otherwise target drift masquerades as leakage. Measured feature-driven
 excess collapses to $\leq +0.004$ against a $0.02$ tolerance (versus
@@ -283,7 +293,7 @@ ridge indifferent, even though Greeks captured 8.6\% of the model's split
 gain at that same horizon. A plausible interpretation was that gamma, theta
 and vega are near-deterministic transforms of features already present, and
 that the redundancy encouraged unstable tree splits that spend themselves on
-out-of-sample variance. The expanded-panel replication in
+out-of-sample variance. The expanded-sample re-test in
 Section~\ref{sec:replication} was designed to test exactly that
 interpretation. Quote-based microstructure features (order-flow imbalance,
 quote imbalance) added $+1.5$pp for LightGBM at 30/60m and nothing below
@@ -293,12 +303,17 @@ that. Both findings were treated as hypotheses to re-test, not conclusions.
 \label{sec:replication}
 
 The June ablations were re-run as a pre-registered $2\times2$
-(Greeks $\times$ microstructure) on the three-month panel (the five model classes of Section~\ref{sec:method} $\times$ 4 horizons $\times$ 4 arms), with predictions and decision rules committed before launch. The registered
+(Greeks $\times$ microstructure) on the three-month panel (the five model classes of Section~\ref{sec:method} $\times$ 4 horizons $\times$ 4 arms), with predictions and decision rules committed before launch. One scope
+statement up front: the expanded panel \emph{contains} the June sessions,
+so this round is a pre-registered expanded-sample robustness test rather
+than an independent replication; ``replication target'' below names the
+registered expectation being re-tested, and fully out-of-sample
+confirmation is reserved for data the study has never touched. The registered
 expectations were: ridge flat under Greeks ($|\Delta| < 0.5$pp), LightGBM
 hurt by $\geq 1$pp on $\geq 2$ horizons (replicating June), TCN
 approximately flat, and no Greeks$\times$micro interaction.
 
-The replication broke the June story in an instructive way. All contrasts
+The re-test broke the June story in an instructive way. All contrasts
 below are computed on identical row sets, with per-fold and per-calendar-month
 deltas and Diebold--Mariano tests as described in
 Section~\ref{sec:method}. The LightGBM
@@ -348,7 +363,7 @@ conflates directional with volatility demand; the strongest untested
 variant, chain-level vega-weighted net flow, is named in
 Section~\ref{sec:limits} rather than quietly run.
 
-The replication round also doubled as an engineering exhibit: the two
+The re-test round also doubled as an engineering exhibit: the two
 overlapping arms were recomputed on a second machine (Windows, pinned to
 the same library versions) and all 64 recomputed ridge and LightGBM summary
 values matched the Linux results bit-for-bit. (The claim is scoped to those
@@ -380,9 +395,14 @@ $\lambda$ arm as sensitivities. Three outcome quantities are kept distinct:
 the gross vega-linearized edge
 $\mathrm{sign}(\widehat{\dIV})\cdot\text{vega}_t\cdot(\mathrm{IV}_{t+h} -
 \mathrm{IV}_t)$; the \emph{entry-cost-adjusted markout} (gross minus
-half-spread at entry, marked to $t{+}h$ mid), the statistical primary;
+half-spread at entry, marked at the same contract's $t{+}h$ mid-IV), the
+statistical primary;
 and the \emph{round-trip-touch net} (additionally minus the exit
-half-spread), which drives the economic verdict. Scope is the registered
+half-spread), which drives the economic verdict. ``Markout'' is used
+throughout in exactly this vega-linearized sense: the position is scored by
+the contract's realized IV change times its entry vega, minus spread costs,
+never by option-premium P\&L (no delta hedge, no theta/gamma/volga, no
+financing; Section~\ref{sec:limits}). Scope is the registered
 tradeable region (DTE $\leq 7$, off-ATM); out-of-scope cells are evaluated
 hypothetically and reported separately. Inference is a day-level bootstrap
 ($N = 10{,}000$) over the 54 test days. A greedy per-cell cooldown variant
@@ -559,9 +579,22 @@ to confirm the 60-minute horizon as primary on new data.
     vega-weighted skill at 30/60m), skill conditioned on cell-minutes with
     nonzero window flow (attacks sparsity dilution), and multi-leg print
     exclusion (attacks sign misclassification).
+  \item \textbf{Mechanical-baseline decomposition of the forecasting
+    skill.} The attribution decomposition bounds how much of the
+    \emph{tradable} signal is quote bounce, but the headline skill numbers
+    themselves have not been decomposed against purely mechanical
+    predictors: last-change reversal ($\hat{y} = -\dIV_{1m}$), an
+    IV-change-only autoregression, and fixed-membership or
+    representative-contract targets. Until that is run, ``beats
+    persistence'' should be read as including predictable measurement
+    mean-reversion, not only richer surface information.
   \item \textbf{Next:} pre-register and confirm the 60-minute horizon as
     primary on new data (the one hypothesis the replay's exploratory sweep
-    names; Section~\ref{sec:replay-results}); cross-sectional feature
+    names; Section~\ref{sec:replay-results}), with the one-minute
+    delayed-entry arm promoted to the \emph{primary} specification, since
+    the same-minute touch is not causally available once the minute's
+    closing quote has formed the signal; the mechanical-baseline
+    decomposition above; cross-sectional feature
     structure (the direction the architecture sweep points to); per-model
     feature defaults in code (the ridge/Greeks flip is adjudicated but
     ridge and LightGBM currently share one feature matrix).

@@ -10,6 +10,7 @@ pre-registered before the corresponding run, and an execution-aware verdict.
 |------|----------|
 | [`memo/`](memo/) | Research memo (LaTeX source + PDF): the headline write-up covering the question, pre-registered expectations, results, what changed between rounds, and the execution-replay verdict. |
 | [`notebooks/`](notebooks/) | Six analysis notebooks covering the full arc (data ingestion, surface construction, labels and leakage tests, baselines, the PyTorch sequence model, and the execution-aware replay), committed **with rendered outputs**. The underlying OPRA data is licensed and not redistributed, so the notebooks ship executed rather than re-runnable. |
+| [`results/`](results/) | Committed derived artifacts of the pre-registered replay run (summary grids, bootstrap CIs, attribution decomposition, validity diagnostics) plus a provenance manifest with code commit and data checksums. Notebook 06 and the memo's replay section render from exactly these tables. |
 
 ## The short version
 

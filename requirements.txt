@@ -1,0 +1,12 @@
+# Environment used to execute the committed notebooks (Python 3.13).
+# The notebooks also import the research library from a sibling checkout of
+# the (private) qfdev_research repo; see the README for what is and is not
+# redistributed.
+numpy>=2.0
+pandas>=2.2
+pyarrow>=17
+matplotlib>=3.9
+scipy>=1.14
+scikit-learn>=1.6
+lightgbm>=4.5
+torch>=2.6
