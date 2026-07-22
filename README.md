@@ -33,4 +33,9 @@ pre-registered before the corresponding run, and an execution-aware verdict.
   forecasts clear entry costs decisively at 60 minutes: the next
   pre-registerable hypothesis, not a claimed win.
 
+The implementation (surface builder, feature layer, walk-forward harness,
+leakage probes, models, replay engine) lives in a private research
+repository; this repo publishes the write-up, the executed notebooks, and
+the derived result artifacts with their provenance manifest.
+
 Read the [memo](memo/memo.pdf) for the full story.
