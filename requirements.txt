@@ -1,4 +1,7 @@
-# Environment used to execute the committed notebooks (Python 3.13).
+# Loose bounds for the notebook environment (Python 3.13); the exact executed
+# versions are pinned in requirements-lock.txt, which also explains how this
+# environment relates to the replay run's environment (recorded in
+# results/replay/replay_manifest.json).
 # The notebooks also import the research library from a sibling checkout of
 # the (private) qfdev_research repo; see the README for what is and is not
 # redistributed.

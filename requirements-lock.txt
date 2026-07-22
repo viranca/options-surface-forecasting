@@ -1,0 +1,24 @@
+# Exact environment the committed notebooks were executed in
+# (Python 3.13.14, Windows, CPU-only).
+#
+# Two environments appear in this project, intentionally distinct:
+#   1. This one: the analysis machine that executed notebooks 01-06.
+#   2. The registered replay run itself executed under Python 3.11.9 with the
+#      package versions recorded inside results/replay/replay_manifest.json
+#      (pandas 2.x / numpy / pyarrow pinned there). The replay's numbers come
+#      from that run's committed CSVs, not from re-execution here, so the
+#      notebook environment does not need to match it. The cross-machine
+#      determinism claim in the memo (bit-identical re-computation) applies to
+#      the forecasting pipeline under its own pinned versions, per FINDINGS.
+numpy==2.4.6
+pandas==2.3.3
+pyarrow==24.0.0
+matplotlib==3.10.9
+scipy==1.17.1
+scikit-learn==1.8.0
+lightgbm==4.6.0
+torch==2.12.0
+# notebook execution stack
+nbconvert==7.17.1
+nbclient==0.10.4
+ipykernel==7.2.0

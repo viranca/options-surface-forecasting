@@ -17,7 +17,7 @@ pre-registered before the corresponding run, and an execution-aware verdict.
 - **Data**: tick-level top-of-book quotes for the full SPY option chain
   (Databento OPRA CMBP-1, consolidated NBBO) and the SPY underlying
   (Nasdaq MBP-1), over 64 trading sessions (Mar 31 – Jul 1, 2026); roughly
-  44 billion raw quote records in the June month alone, built into
+  44 billion raw quote records over the initial 21-session panel, built into
   quality-gated, arbitrage-screened volatility-surface states on a
   one-minute grid.
 - **Task**: forecast per-cell implied-volatility changes at 5–60-minute
@@ -35,6 +35,27 @@ pre-registered before the corresponding run, and an execution-aware verdict.
   markout does not clear the touch. An exploratory sweep finds the same
   forecasts clear entry costs decisively at 60 minutes: the next
   pre-registerable hypothesis, not a claimed win.
+
+## At a glance
+
+The one-minute SPY implied-volatility surface the pipeline builds
+([notebook 02](notebooks/02_surface_construction.ipynb)):
+
+![One-minute SPY IV surface](figures/iv_surface.png)
+
+Out-of-sample skill versus persistence, June panel, recomputed live under the
+purged walk-forward protocol ([notebook 04](notebooks/04_baseline_models.ipynb)):
+
+![Skill by model and horizon](figures/skill_by_horizon.png)
+
+And the economic verdict from the pre-registered replay, rendered from the
+[committed result tables](results/replay/): negative at the registered
+15-minute primary, decisively positive on entry cost at the exploratory
+60-minute horizon ([notebook 06](notebooks/06_execution_aware_replay.ipynb)):
+
+![Replay edge by horizon](figures/replay_edge_by_horizon.png)
+
+## What is public, what is not
 
 The implementation (surface builder, feature layer, walk-forward harness,
 leakage probes, models, replay engine) lives in a private research
